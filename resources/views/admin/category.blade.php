@@ -42,7 +42,7 @@
       <div class="page-content">
         <div class="page-header">
           <div class="container-fluid">
-            <h1 style="color: white" > Add Category </h1>
+            <h1 style="color: white; text-align:center" > Add Category </h1>
             <div class="div_deg">
                 <form action="add_category" method="post">
                 @csrf
@@ -56,11 +56,19 @@
               <table class="table_deg">
                 <tr>
                   <th>Category Name</th>
+                  <th>Edit</th>
                   <th>Delete</th>
                 </tr>
                 @foreach($data as $data)
                 <tr>
                   <td>{{$data->category_name}}</td>
+                  <td>
+                  <?php
+                    $dataId = $data->id; 
+                    $deleteUrl = '/edit_category/' . $dataId;
+                    ?>
+                    <a class="btn btn-success" href="<?php echo $deleteUrl; ?>">Edit</a>
+                  </td>
                   <td>
                     <?php
                     $dataId = $data->id; 
@@ -97,13 +105,13 @@
     </script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="admincss/vendor/jquery/jquery.min.js"></script>
-    <script src="admincss/vendor/popper.js/umd/popper.min.js"></script>
-    <script src="admincss/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="admincss/vendor/jquery.cookie/jquery.cookie.js"></script>
-    <script src="admincss/vendor/chart.js/Chart.min.js"></script>
-    <script src="admincss/vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="admincss/js/charts-home.js"></script>
-    <script src="admincss/js/front.js"></script>
+    <script src="../admincss/vendor/jquery/jquery.min.js"></script>
+    <script src="../admincss/vendor/popper.js/umd/popper.min.js"></script>
+    <script src="../admincss/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../admincss/vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="../admincss/vendor/chart.js/Chart.min.js"></script>
+    <script src="../admincss/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../admincss/js/charts-home.js"></script>
+    <script src="../admincss/js/front.js"></script>
   </body>
 </html>
