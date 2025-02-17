@@ -5,8 +5,7 @@
         <div class="sidebar-header d-flex align-items-center">
           <div class="avatar"><img src="../admincss/img/son-tung.jpg" alt="..." class="img-fluid rounded-circle"></div>
           <div class="title">
-            <h1 class="h5">Son-Tung-MTP</h1>
-            <p>Web Designer</p>
+            <h1 class="h5">Admin</h1>
           </div>
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
@@ -20,8 +19,7 @@
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Products </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                     <li><a href="add_product">Add Product</a></li>
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
+                    <li><a href="view_product">View Product</a></li>
                   </ul>
                 </li>
       </nav>

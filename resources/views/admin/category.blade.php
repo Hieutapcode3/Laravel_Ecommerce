@@ -19,9 +19,10 @@
         margin: auto;
         border: 2px solid yellowgreen;
         margin-top: 50px;
-        width:600px;
+        width:100%;
       }
       th{
+        text-align: center;
         background-color: skyblue;
         padding: 15px;
         font-size: 20px;
