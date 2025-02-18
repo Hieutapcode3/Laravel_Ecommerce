@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Products;
+use App\Models\Order;
 
 
 class AdminController extends Controller
 {
+    public function index(){
+        $orders = Order::paginate(5);
+        $orders->withPath('admin');
+        return view('admin.index',compact('orders'));
+    }
     public function view_category(){
         $data = Category::all();
         return view('admin.category',compact('data'));
@@ -51,7 +57,6 @@ class AdminController extends Controller
     public function upload_product(Request $request){
         $data = new Products;
         $data->title = $request->title;
-        $data->description = $request->description;
         $data->price = $request->price;
         $data->quantity = $request->quantity;
         $data->category = $request->category;
@@ -88,7 +93,6 @@ class AdminController extends Controller
     public function edit_product(Request $request,$id){
         $data = Products::find($id);
         $data->title = $request->title;
-        $data->description = $request->description;
         $data->price = $request->price;
         $data->quantity = $request->quantity;
         $data->category = $request->category;

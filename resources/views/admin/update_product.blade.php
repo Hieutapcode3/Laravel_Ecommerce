@@ -15,9 +15,10 @@
         padding: 20px;
       }
       .product-img{
-        width: 150px;
-        height: 150px;
-        object-fit: contain;
+        display: unset;
+      }
+      form label{
+        font-size: 22px;
       }
     </style>
   </head>
@@ -40,10 +41,6 @@
                         <input type="text" name="title" value="{{$data->title}}">
                     </div>
                     <div>
-                        <label for="">Description</label>
-                        <textarea name="description" id="">{{$data->description}}</textarea>
-                    </div>
-                    <div>
                         <label for="">Price</label>
                         <input type="text" name="price" value="{{$data->price}}">
                     </div>
@@ -54,7 +51,6 @@
                     <div>
                         <label for="">Category</label>
                         <select name="category" id="">
-                            <!-- <option value="{{$data->category}}}">{{$data->category}}</option> -->
                             @foreach($category as $category)
                                 <option value="{{$category->category_name}}">{{$category->category_name}}</option>
                             @endforeach
@@ -76,14 +72,6 @@
           </div>
       </div>
     </div>
-    <!-- JavaScript files-->
-    <script src="../admincss/vendor/jquery/jquery.min.js"></script>
-    <script src="../admincss/vendor/popper.js/umd/popper.min.js"></script>
-    <script src="../admincss/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../admincss/vendor/jquery.cookie/jquery.cookie.js"></script>
-    <script src="../admincss/vendor/chart.js/Chart.min.js"></script>
-    <script src="../admincss/vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="../admincss/js/charts-home.js"></script>
-    <script src="../admincss/js/front.js"></script>
+    @include('admin.scripts')
   </body>
 </html>

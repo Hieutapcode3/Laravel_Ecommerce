@@ -791,6 +791,7 @@ nav#sidebar .avatar {
 
 nav#sidebar ul {
   max-height: none;
+  font-size: 18px;
 }
 
 nav#sidebar li {

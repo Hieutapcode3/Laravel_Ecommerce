@@ -6,11 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
 route::get('/',[HomeController::class,'home']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+route::get('/dashboard',[HomeController::class,'login_home'])->
+    middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -20,7 +17,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin', [HomeController::class, 'index'])->name('admin');
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 });
 route::get('view_category',[AdminController::class,'view_category'])->middleware
     (['auth','admin']);
@@ -46,3 +43,11 @@ route::post('edit_product/{id}',[AdminController::class,'edit_product'])->middle
     (['auth','admin']);
 route::get('product_search',[AdminController::class,'product_search'])->middleware
     (['auth','admin']);
+route::get('add_cart/{id}',[HomeController::class,'add_cart'])->middleware
+    (['auth','verified']);
+route::get('mycart',[HomeController::class,'mycart'])->middleware
+    (['auth','verified']);
+route::get('delete_cart/{id}',[HomeController::class,'delete_cart'])->middleware
+    (['auth','verified']);
+route::post('confirm_order',[HomeController::class,'confirm_order'])->middleware
+    (['auth','verified']);

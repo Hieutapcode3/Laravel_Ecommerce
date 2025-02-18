@@ -1,8 +1,8 @@
 <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="dashboard">
           <span>
-            Giftos
+            Food Ecommerce
           </span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +34,17 @@
             </li>
           </ul>
           <div class="user_option">
+            @if(Route::has('login'))
+              @auth
+              <a href="mycart">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                [{{$count}}]
+              </a>
+              <form method="POST" action="logout">
+                @csrf
+                <input type="submit" value="Logout">
+              </form>
+              @else
             <a href="login">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
@@ -46,14 +57,10 @@
                 Register
               </span>
             </a>
-            <a href="">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-            </a>
-            <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
+            @endauth
+          @endif
+            
+            
           </div>
         </div>
       </nav>

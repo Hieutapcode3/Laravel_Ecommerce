@@ -3,34 +3,83 @@
   <head> 
     @include('admin.css')
     <style type="text/css">
-      .div_deg {
-        display: flex;
-        justify-content: center;
-        align-item:center;
-        margin-top: 60px;
-      }
-      h1{
-        text-align: center;
-        color: white;
-      }
-      label{
-        display: inline-block;
-        width: 250px;
-        font-size: 18px !important;
-        color: white !important;
-      }
-      input[type='text']{
-        width: 350px;
-        height: 50px;
-      }
-      textarea {
-        width: 450px;
-        height: 80px;
-      }
-      .input_deg{
-        padding: 15px;
+    .div_deg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      background: #ffffffc9;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .product-form{
+      width: 100%;
+    }
+    .input_deg {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .input_deg label {
+      font-size: 24px;
+      color: black;
+    }
+    .input_deg:last-child {
+      justify-content: end;
+    }
+    label {
+      width: 40%;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
 
-      }
+    input[type='text'], 
+    input[type='number'], 
+    select {
+      width: 55%;
+      height: 40px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="file"] {
+      width: 55%;
+      width: 55%;
+      height: 40px;
+      line-height: 34px;
+      border: none;
+    }
+
+    textarea {
+      width: 55%;
+      height: 80px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn-success {
+      height: 45px;
+      font-size: 16px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-success:hover {
+      background-color: #218838;
+    }
     </style>
   </head>
   <body>
@@ -42,15 +91,11 @@
           <div class="container-fluid">
             <h1>Add Product</h1>
             <div class="div_deg">
-                <form action="upload_product" method="post" enctype="multipart/form-data">
+                <form class="product-form" action="upload_product" method="post" enctype="multipart/form-data">
                   @csrf
                     <div class="input_deg">
                         <label for="">Product Title</label>
                         <input type="text" name="title">
-                    </div>
-                    <div class="input_deg">
-                        <label for="">Description</label>
-                        <textarea name="description" required></textarea>
                     </div>
                     <div class="input_deg">
                         <label for="">Price</label>
@@ -83,14 +128,6 @@
           </div>
       </div>
     </div>
-    <!-- JavaScript files-->
-    <script src="../admincss/vendor/jquery/jquery.min.js"></script>
-    <script src="../admincss/vendor/popper.js/umd/popper.min.js"></script>
-    <script src="../admincss/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../admincss/vendor/jquery.cookie/jquery.cookie.js"></script>
-    <script src="../admincss/vendor/chart.js/Chart.min.js"></script>
-    <script src="../admincss/vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="../admincss/js/charts-home.js"></script>
-    <script src="../admincss/js/front.js"></script>
+    @include('admin.scripts')
   </body>
 </html>

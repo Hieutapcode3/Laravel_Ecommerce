@@ -1,1 +1,125 @@
-/* your styles go here */
+* {
+    font-family: cursive;
+  }
+  input[type='text']
+  {
+    width: 450px;
+    height: 52px;
+    border-radius: 6px;
+    padding-left: 8px;
+  }
+  h1 {
+    text-align: center;
+    color: #007bff;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .div_deg {
+    display: flex;
+    justify-content: center;
+    margin:40px 0;
+  }
+  .table_deg {
+    width: 80%;
+    background-color: #ffffffc9;
+    border-radius: 10px;
+    box-shadow: 6px 7px 8px 0px rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+  }
+  th, td {
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+  }
+  th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+  td {
+    border-bottom: 1px solid #ddd;
+    color: black;
+  }
+  .product-img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+  }
+  tr {
+    border-bottom: 2px solid #00000047;
+  }
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  input[type="search"] {
+    width: 500px;
+    height: 50px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .btn {
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .btn-success {
+    background-color: #28a745;
+    color: white;
+  }
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  .col-small {
+    width: 12%;
+  }
+  .form-search{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .input-group {
+    position: relative;
+    margin: 0 24px;
+    width: auto;
+  }
+
+  .input {
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 18px;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .user-label {
+    position: absolute;
+    left: 15px;
+    color: #e8e8e8;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .input:focus, input:valid {
+    outline: none;
+    border: 1.5px solid #1a73e8;
+  }
+
+  .input:focus ~ label, input:valid ~ label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #2d3035;
+    padding: 0 .2em;
+    color: #2196f3;
+  }
+  .input-category{
+    display: flex;
+  }
