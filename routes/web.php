@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
 route::get('/',[HomeController::class,'home']);
+Route::get('/filter-products/{category}', [HomeController::class, 'filterProducts']);
 route::get('/dashboard',[HomeController::class,'login_home'])->
     middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware('auth')->group(function () {
@@ -13,7 +14,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 require __DIR__.'/auth.php';
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -43,6 +43,10 @@ route::post('edit_product/{id}',[AdminController::class,'edit_product'])->middle
     (['auth','admin']);
 route::get('product_search',[AdminController::class,'product_search'])->middleware
     (['auth','admin']);
+route::get('order_search',[AdminController::class,'order_search'])->middleware
+    (['auth','admin']);
+route::get('user_search',[AdminController::class,'user_search'])->middleware
+    (['auth','admin']);
 route::get('add_cart/{id}',[HomeController::class,'add_cart'])->middleware
     (['auth','verified']);
 route::get('mycart',[HomeController::class,'mycart'])->middleware
@@ -51,3 +55,15 @@ route::get('delete_cart/{id}',[HomeController::class,'delete_cart'])->middleware
     (['auth','verified']);
 route::post('confirm_order',[HomeController::class,'confirm_order'])->middleware
     (['auth','verified']);
+route::get('view_user',[AdminController::class,'view_user'])->middleware
+    (['auth','admin']);
+route::get('delete_user/{id}',[AdminController::class,'delete_user'])->middleware
+    (['auth','admin']);
+route::get('edit_user/{id}',[AdminController::class,'edit_user'])->middleware
+    (['auth','admin']);
+route::post('update_user/{id}',[AdminController::class,'update_user'])->middleware
+    (['auth','admin']);
+route::get('delivered/{id}',[AdminController::class,'delivered'])->middleware
+    (['auth','admin']);
+route::get('delivering/{id}',[AdminController::class,'delivering'])->middleware
+    (['auth','admin']);

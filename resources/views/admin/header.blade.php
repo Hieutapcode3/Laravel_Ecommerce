@@ -27,7 +27,7 @@
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link> -->
-                    <input type="submit" value="logout">
+                    <input class="btn btn-danger" type="submit" value="Log out">
                 </form>
           </div>
         </div>

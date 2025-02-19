@@ -8,30 +8,22 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class=""></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  ">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="shop.html">
-                Shop
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="why.html">
-                Why Us
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="testimonial.html">
-                Testimonial
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
+          <ul class="navbar-nav " style="flex-grow: 1; margin-left: 50px">
+          <?php
+            $urlMeat = '/dashboard/' . 'Meat';
+            $urlVegetable = '/dashboard/' . 'Vegetable';
+            $urlVitamin = '/dashboard/' . 'Vitamin';
+          ?>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $urlMeat; ?>">Meat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $urlVegetable; ?>">Vegetable</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $urlVitamin; ?>">Vitamin</a>
+          </li>
           </ul>
           <div class="user_option">
             @if(Route::has('login'))
@@ -42,7 +34,7 @@
               </a>
               <form method="POST" action="logout">
                 @csrf
-                <input type="submit" value="Logout">
+                <input class="btn btn-danger" type="submit" value="Logout">
               </form>
               @else
             <a href="login">

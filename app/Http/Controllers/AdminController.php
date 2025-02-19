@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Products;
 use App\Models\Order;
+use App\Models\User;
 
 
 class AdminController extends Controller
@@ -110,5 +111,53 @@ class AdminController extends Controller
         $search = $request->search;
         $product = Products::where('title','LIKE','%'.$search.'%')->paginate(3);
         return view('admin.view_product',compact('product'));
+    }
+    public function order_search(Request $request){
+        $search = $request->search;
+        $orders = Order::where('name','LIKE','%'.$search.'%')->paginate(3);
+        return view('admin.index',compact('orders'));
+    }
+    public function view_user(){
+        $users = User::paginate(10);
+        return view('admin.users', compact('users'));
+    }
+    public function user_search(Request $request){
+        $search = $request->search;
+        $users = User::where('name','LIKE','%'.$search.'%')->paginate(3);
+        return view('admin.users',compact('users'));
+    }
+    public function delete_user($id){
+        $data = User::find($id);
+        toastr()->closeOnHover(true)->closeDuration(5)->success("Delete Successful");
+        $data->delete();
+        return redirect()->back();
+    }
+    public function edit_user($id){
+        $data = User::find($id);
+        return view('admin.edit_user', compact('data'));
+    }
+    public function update_user(Request $request, $id){
+        $data = User::find($id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->address = $request->address;
+        $data->password = $request->password;
+        $data->usertype = $request->user_type;
+        $data->save();
+        toastr()->closeOnHover(true)->closeDuration(5)->success("User Updated Successfully");
+        return redirect('/view_user');
+    }
+    public function delivered($id){
+        $data = Order::find($id);
+        $data->status = 'Delivered';
+        $data->save();
+        return redirect('/admin');
+    }
+    public function delivering($id){
+        $data = Order::find($id);
+        $data->status = 'Delivering';
+        $data->save();
+        return redirect('/admin');
     }
 }

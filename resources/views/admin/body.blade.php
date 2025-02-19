@@ -17,7 +17,8 @@
             <th class="col-small">Product</th>
             <th class="col-small">Price</th>
             <th class="col-large">Image</th>
-            <th class="col-small">State</th>
+            <th class="col-small">Status</th>
+            <th class="col-small">Change Status</th>
         </tr>
         @foreach($orders as $order)
         <tr>
@@ -35,10 +36,23 @@
             <td>
                 <img class="product-img" src="products/{{$order->product->image}}" alt="">
             </td>
-            <td>{{$order->status}}</td>
+            <td>
+                @if($order->status == 'in progress')
+                    <span style="color: red">{{$order->status}}</span>
+                @elseif($order->status == 'Delivering')
+                    <span>{{$order->status}}</span>
+                @else
+                    <span style="color: green">{{$order->status}}</span>
+                @endif
+            </td>
             <?php
-                $deleteUrl = url('/delete_order/' . $order->id);
+                $delivered = url('/delivered/' . $order->id);
+                $delivering = url('/delivering/' . $order->id);
             ?>
+            <td>
+                <a style="margin-bottom: 12px" class="btn btn-success" href="<?php echo $delivered; ?>">Delivered</a>
+                <a class="btn btn-primary" href="<?php echo $delivering; ?>">Delivering</a>
+            </td>
         </tr>
         @endforeach
     </table>

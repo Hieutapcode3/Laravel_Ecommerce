@@ -10,18 +10,20 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function home(){
-        $product = Products::all();
-        if(Auth::id()){
-            $user = Auth::user();
-            $userid = $user->id;
-            $count = Cart::where('user_id',$userid)->count();
-            
-        }else{
-            $count ='';
-        }
-        return view('home.index',compact('product','count'));
+    public function home()
+    {
+        $product = Products::where('category', 'Meat')->get();
+        $count = Auth::check() ? Cart::where('user_id', Auth::id())->count() : 0;
+        return view('home.index', compact('product', 'count'));
     }
+
+    public function filterProducts($category)
+    {
+        $products = Products::where('category', $category)->get();
+        return response()->json($products);
+    }
+
+
     public function login_home(){
         $product = Products::all();
         $user = Auth::user();
