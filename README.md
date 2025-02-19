@@ -1,10 +1,13 @@
+Dưới đây là nội dung đã chỉnh sửa theo yêu cầu của bạn:  
 
 ---
 
 # 🍽️ Food Ecommerce  
-
+# 
 ## 🌐 Giới thiệu  
-Food Ecommerce là một nền tảng thương mại điện tử chuyên cung cấp thực phẩm tươi sống, rau củ, trái cây, hải sản, thịt cá và các mặt hàng tiêu dùng khác. Ứng dụng được phát triển trên PHP Laravel, kết hợp với MySQL trên Aiven Cloud để đảm bảo hiệu suất và khả năng mở rộng. Người dùng có thể dễ dàng tìm kiếm, đặt hàng và theo dõi đơn hàng, trong khi quản trị viên có toàn quyền quản lý sản phẩm, danh mục và đơn hàng.
+Food Ecommerce là một nền tảng thương mại điện tử chuyên cung cấp thực phẩm tươi sống, rau củ, trái cây, hải sản, thịt cá và các mặt hàng tiêu dùng khác. Ứng dụng được phát triển trên PHP Laravel, kết hợp với MySQL trên Aiven Cloud để đảm bảo hiệu suất và khả năng mở rộng. Người dùng có thể dễ dàng tìm kiếm, đặt hàng và theo dõi đơn hàng, trong khi quản trị viên có toàn quyền quản lý sản phẩm, danh mục và đơn hàng.  
+
+👉 **Bạn có thể xem tại:** [hieutapcode3.github.io/Laravel_Ecommerce](https://hieutapcode3.github.io/Laravel_Ecommerce/)  
 
 ---
 
@@ -70,14 +73,15 @@ php artisan migrate --seed
 php artisan serve  
 ```
 Sau đó, mở trình duyệt và truy cập tại đường dẫn app_url của bạn.
+
 ---
 
 ## 🔍 Hướng dẫn sử dụng  
 - **Trang chủ:** Hiển thị sản phẩm nổi bật và các danh mục.  
 - **Phân loại sản phẩm:** Người dùng có thể lọc theo danh mục và tìm kiếm sản phẩm.  
 - **Giỏ hàng:** Quản lý sản phẩm đã chọn và tiến hành thanh toán.  
-- **Trang quản trị:** `/admin`
-- **Thêm, sửa ,xóa các sản phẩm và thông tin người dùng.**
+- **Trang quản trị:** `/admin`  
+- **Thêm, sửa, xóa các sản phẩm và thông tin người dùng.**  
 
 ---
 
@@ -104,3 +108,5 @@ Sau đó, mở trình duyệt và truy cập tại đường dẫn app_url của
 - Không chia sẻ thông tin `.env` khi triển khai lên server.  
 
 ---
+
+Mình đã thêm dòng bạn yêu cầu, nếu cần chỉnh sửa gì thêm cứ nói nhé! 🚀
