@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+# 🍽️ Food Ecommerce  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🌐 Giới thiệu  
+Food Ecommerce là một nền tảng thương mại điện tử chuyên cung cấp thực phẩm tươi sống, rau củ, trái cây, hải sản, thịt cá và các mặt hàng tiêu dùng khác. Ứng dụng được phát triển trên PHP Laravel, kết hợp với MySQL trên Aiven Cloud để đảm bảo hiệu suất và khả năng mở rộng. Người dùng có thể dễ dàng tìm kiếm, đặt hàng và theo dõi đơn hàng, trong khi quản trị viên có toàn quyền quản lý sản phẩm, danh mục và đơn hàng.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ⚙️ Công nghệ sử dụng  
+- **Backend:** Laravel (PHP)  
+- **Database:** MySQL trên Aiven Cloud  
+- **Frontend:** HTML, CSS, JavaScript (Bootstrap)  
+- **Xác thực:** Laravel Breeze  
+- **Triển khai:** GitHub Codespaces  
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Tính năng chính  
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 🛒 Người dùng  
+- Duyệt danh sách sản phẩm theo danh mục: **Thịt, Hải sản, Rau củ, Hoa quả, Thực phẩm chế biến sẵn, Thực phẩm bổ sung**.  
+- Đăng ký tài khoản, đăng nhập, thêm sản phẩm vào giỏ hàng và tiến hành thanh toán.  
+- Quản lý đơn hàng cá nhân, kiểm tra trạng thái và lịch sử mua hàng.  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🔧 Quản trị viên  
+- **Quản lý sản phẩm:** Thêm mới, chỉnh sửa, xóa sản phẩm.  
+- **Quản lý danh mục:** Cập nhật và tổ chức các danh mục sản phẩm.  
+- **Quản lý đơn hàng:** Xác nhận, xử lý và hủy đơn hàng khi cần thiết.  
+- **Quản lý người dùng:** Quản lý tài khoản, phân quyền truy cập.  
+- **Quản lý kho hàng:** Theo dõi số lượng hàng tồn kho.  
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📦 Hướng dẫn cài đặt  
 
-### Premium Partners
+### 1️⃣ **Sao chép mã nguồn**  
+```sh  
+git clone https://github.com/Hieutapcode3/Laravel_Ecommerce  
+cd FoodEcommerce  
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 2️⃣ **Cấu hình môi trường**  
+Tạo file `.env` trong thư mục gốc và nhập thông tin cơ sở dữ liệu như sau:  
+```ini  
+App_Url=<yourUrl>
+DB_CONNECTION=mysql  
+DB_HOST=<AIVEN_DATABASE_HOST>  
+DB_PORT=<AIVEN_DATABASE_PORT>  
+DB_DATABASE=<AIVEN_DATABASE_NAME>  
+DB_USERNAME=<AIVEN_DATABASE_USER>  
+DB_PASSWORD=<AIVEN_DATABASE_PASSWORD>  
+```
 
-## Contributing
+### 3️⃣ **Cài đặt các thư viện cần thiết**  
+```sh  
+composer install  
+npm install  
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4️⃣ **Tạo key và cấu trúc database**  
+```sh  
+php artisan key:generate  
+php artisan migrate --seed  
+```
 
-## Code of Conduct
+### 5️⃣ **Chạy ứng dụng**  
+```sh  
+php artisan serve  
+```
+Sau đó, mở trình duyệt và truy cập tại đường dẫn app_url của bạn.
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🔍 Hướng dẫn sử dụng  
+- **Trang chủ:** Hiển thị sản phẩm nổi bật và các danh mục.  
+- **Phân loại sản phẩm:** Người dùng có thể lọc theo danh mục và tìm kiếm sản phẩm.  
+- **Giỏ hàng:** Quản lý sản phẩm đã chọn và tiến hành thanh toán.  
+- **Trang quản trị:** `/admin`
+- **Thêm, sửa ,xóa các sản phẩm và thông tin người dùng.**
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📂 Cấu trúc thư mục  
+```
+├── app
+│   ├── Http\Controllers
+│   ├── Models
+│   └── Services
+├── database
+│   └── migrations
+├── resources
+│   ├── views
+│   └── js
+├── routes
+│   └── web.php
+└── public
+```
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## ⚠️ Lưu ý  
+- Cần đảm bảo kết nối với cơ sở dữ liệu Aiven trước khi chạy ứng dụng.  
+- Không chia sẻ thông tin `.env` khi triển khai lên server.  
+
+---
