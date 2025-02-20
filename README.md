@@ -1,9 +1,6 @@
-Dưới đây là nội dung đã chỉnh sửa theo yêu cầu của bạn:  
-
 ---
 
 # 🍽️ Food Ecommerce  
-# 
 ## 🌐 Giới thiệu  
 Food Ecommerce là một nền tảng thương mại điện tử chuyên cung cấp thực phẩm tươi sống, rau củ, trái cây, hải sản, thịt cá và các mặt hàng tiêu dùng khác. Ứng dụng được phát triển trên PHP Laravel, kết hợp với MySQL trên Aiven Cloud để đảm bảo hiệu suất và khả năng mở rộng. Người dùng có thể dễ dàng tìm kiếm, đặt hàng và theo dõi đơn hàng, trong khi quản trị viên có toàn quyền quản lý sản phẩm, danh mục và đơn hàng.  
 
@@ -108,5 +105,3 @@ Sau đó, mở trình duyệt và truy cập tại đường dẫn app_url của
 - Không chia sẻ thông tin `.env` khi triển khai lên server.  
 
 ---
-
-Mình đã thêm dòng bạn yêu cầu, nếu cần chỉnh sửa gì thêm cứ nói nhé! 🚀
