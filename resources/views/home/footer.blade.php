@@ -17,7 +17,7 @@
         <div class="row" style="display: flex;justify-content: space-evenly; padding-bottom: 25px;">
           <div class="col-md-6 col-lg-3">
             <h6>
-              ABOUT US
+              ABOUT ME
             </h6>
             <p style="text-align: justify;">
             This project was developed by Pham Trung Hieu with the goal of providing an efficient solution for product and user management. We are committed to delivering an optimal experience with an intuitive design and powerful features.

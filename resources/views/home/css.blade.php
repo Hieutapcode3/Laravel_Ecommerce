@@ -4,8 +4,6 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-
   <title>
     Food_Ecommerce
   </title>
